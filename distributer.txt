@@ -1,0 +1,10 @@
+
+CREATE TABLE Distributer_details(Distributer_id INT NOT NULL PRIMARY KEY IDENTITY(1000,1),First_name varchar(50) not null,
+Middle_Name varchar(50) not null,Last_name varchar(50) not null,Area varchar(50) not null,City varchar(50) not null)
+
+insert into Distributer_details
+values
+(1000,'Harish','Rajesh','Kanoje','Kharbi','Nagpur'),
+(1001,'Kajal','Chandrakant','Palkhade','Pratap Nagar','Nagpur'),
+(1002,'Hrishikesh','Bhimrao','Dhone','Shubhash Nagar','Nagpur'),
+(1003,'Kunal','Hrishi','Nandeshwar','Indora','Nagpur');
