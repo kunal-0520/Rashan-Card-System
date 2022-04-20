@@ -1,0 +1,8 @@
+create table Distributer_login(Distributer_id int not null foreign key references Distributer_details(Distributer_id),
+Password varchar(50) not null )
+
+insert into Distributer_login
+values(1001,'ABC@4567'),
+(1002,'DEF@8415'),
+(1003,'QWE@786'),
+(1004,'SAE@4201');
