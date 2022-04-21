@@ -1,5 +1,3 @@
-from asyncio.windows_events import NULL
-from multiprocessing.sharedctypes import Value
 import re
 
 class admin():
@@ -42,13 +40,18 @@ class admin():
 
 
         '''Area verification starts '''    
-        self.area = input("Area name: ")
-        if re.match('^[a-z A-Z]*$', self.area):
-            pass
-        else:
-            print(" ")
-            print(" *** INCORRECT AREA NAME *** ")
+        while True:
+            self.area = input("Area name: ")
+            if re.match('^[a-z A-Z]*$', self.area):
+                break
 
+            self.area = input("Re enter area name: ")
+            if re.match('^[a-z A-Z]*$', self.area):
+                break
+            else:
+                print(" *** TOO MANY ATTEMPTS *** ")
+                exit()
+        pass
         '''Area verifiation ends'''
         
         
@@ -58,7 +61,7 @@ class admin():
         regex = "\d{10}"
 
         while True:
-            self.phone_no = input("Enter your phone_no: ")
+            self.phone_no = input("Phone no: ")
             if re.fullmatch("\d{10}", self.phone_no):
                 break
             
@@ -67,34 +70,34 @@ class admin():
             if re.fullmatch("\d{10}", self.phone_no):
                 break
             else:
-                print("*** TOO MANY ATTEMPTS ***")
-
-
-
-
-
-            '''if re.fullmatch(regex, self.phone_no):
                 pass
-            else:
                 print(" ")
-                print(" *** INCORRECT PHONE NO *** ")'''
+                print("*** Too many attempts *** ")
+                exit()
 
-        '''Phone no ends'''
+        '''Phone no end'''
 
 
 
         '''Ration card starts'''
 
-        self.ration_card = 123456
-        rc = int(input("Ration card no: "))
-        
-        while self.ration_card == rc:
-            print("*** VERIFIED ***")
-            break
-        else:
-            print(" ")
-            print(" *** INCORRECT RATION CARD NO *** ")
+        while True:
 
+            self.ration_card = 123456
+            rc = int(input("Ration card no: "))
+
+            if self.ration_card == rc:
+                print(" ")
+                print("         *** VERIFIED ***")
+                break
+            
+            rc = int(input("Re - enter your ration card no: "))
+            if self.ration_card == rc:
+                break
+            else:
+                print(" ")
+                print("*** TOO MANY ATTEMPTS ***")
+                exit()
         '''Ration card end'''
 
 
@@ -117,4 +120,7 @@ obj_admin.add_user()
 obj_admin.view_user()
 
 # obj_admin.check_rationno()
+
+
+
 
