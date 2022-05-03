@@ -6,4 +6,5 @@
 
 2. Copy all the content of "Create_All_Procedures_With_Single_Query.txt" File. Run it on Your SQL Server in new Query.
 
-3. Download and run the "Start.py" File in VS_Code.
+3. Download "Start.py" File and open in VS_Code. Change the Server Name in Conn variable to your SQL Servers Name. Finally you can Run "Start.py"
+  Note: You will find the Conn Variable in Starting lines of the "Start.py". 
