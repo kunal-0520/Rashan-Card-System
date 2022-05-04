@@ -119,7 +119,7 @@ def Date_of_Birth_Input():
 def Phone_Input():
     phone_no = input("Enter Phone No. : ")
     i = 0
-    while not(phone_no.isdecimal()) or len(phone_no) != 10:
+    while not(re.fullmatch("[789][0-9]{9}", phone_no)):
         phone_no = input("Invalid. Re-Enter Phone No. : ")
         if i == 2:
             print("Too many attempts")
